@@ -483,7 +483,7 @@ CalcLPI <- function(Species,
 
   # IDs (sIDArray) is per-population and sNamesArray is per species... currently exporting species lambdas
   SpeciesData<-cbind(sIDArray, as.vector(sNamesT), SpeciesLambda)
-  SpeciesData<-cbind(as.vector(sNamesArray), SpeciesLambda)
+  #SpeciesData<-cbind(as.vector(sNamesArray), SpeciesLambda)
   lambda_filename <- gsub(".txt", "_Lambda.txt", DatasetName)
   write.table(Headers,file=lambda_filename, sep=",", eol="\n", quote=FALSE, col.names=FALSE, row.names = FALSE)
   write.table(SpeciesData,sep=",", eol="\n", file=lambda_filename, quote=FALSE, col.names=FALSE, row.names = FALSE, append=TRUE)
