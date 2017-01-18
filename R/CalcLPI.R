@@ -479,7 +479,7 @@ CalcLPI <- function(Species,
 
   Headers<-t(c("Species", as.vector(InitialYear:FinalYear)))
 
-  #sNamesT <- sNamesArray[sIDArray, 1]
+  sNamesT <- sNamesArray[sIDArray, 1]
 
   # IDs (sIDArray) is per-population and sNamesArray is per species... currently exporting species lambdas
   SpeciesData<-cbind(sIDArray, as.vector(sNamesT), SpeciesLambda)
