@@ -479,19 +479,19 @@ CalcLPI <- function(Species,
 
   Headers<-t(c("Species", as.vector(InitialYear:FinalYear)))
 
-  #sNamesT <- sNamesArray[sIDArray, 1]
+  sNamesT <- sNamesArray[sIDArray, 1]
 
   # IDs (sIDArray) is per-population and sNamesArray is per species... currently exporting species lambdas
-  #SpeciesData<-cbind(sIDArray, as.vector(sNamesT), SpeciesLambda)
-  SpeciesData<-cbind(as.vector(sNamesArray), SpeciesLambda)
+  PopData<-cbind(sIDArray, as.vector(sNamesT), PopLambda)
+  #SpeciesData<-cbind(as.vector(sNamesArray), SpeciesLambda)
   lambda_filename <- gsub(".txt", "_Lambda.txt", DatasetName)
   write.table(Headers,file=lambda_filename, sep=",", eol="\n", quote=FALSE, col.names=FALSE, row.names = FALSE)
-  write.table(SpeciesData,sep=",", eol="\n", file=lambda_filename, quote=FALSE, col.names=FALSE, row.names = FALSE, append=TRUE)
+  write.table(PopData,sep=",", eol="\n", file=lambda_filename, quote=FALSE, col.names=FALSE, row.names = FALSE, append=TRUE)
 
   #sp_df = melt(SpeciesData)
 
 
-  return(SpeciesLambda)
+  return(PopLambda)
   # MethodFlag
 }
 
